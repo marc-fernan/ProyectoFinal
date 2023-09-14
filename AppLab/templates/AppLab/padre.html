@@ -19,17 +19,17 @@
         <link href="{% static 'AppLab/css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
-        <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="inicio">Inicio</a>
-                <a class="navbar-brand" href="usuarios">Usuarios</a>
-                <a class="navbar-brand" href="agentes">Agentes</a>
-                <a class="navbar-brand" href="tramites">Trámites</a>
-                <a class="navbar-brand" href="tramiteFormulario">Formulario Trámites</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'usuarios' %}">Usuarios</a>
+                <a class="navbar-brand" href="{% url 'agentes' %}">Agentes</a>
+                <a class="navbar-brand" href="{% url 'tramites' %}">Trámites</a>
+                <a class="navbar-brand" href="{% url 'tramiteFormulario' %}">Formulario Trámites</a>
                 <a class="btn btn-primary" href="#signup">Iniciar sesión</a>
             </div>
         </nav>
+        <!-- Navigation-->
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
