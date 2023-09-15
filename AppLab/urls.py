@@ -7,5 +7,6 @@ urlpatterns = [
     path('agentes/', agentes, name="agentes"),
     path('tramites/', tramites, name="tramites"),
     path('padre', padre, name="padre"),
-    path('tramiteFormulario/', tramiteFormulario, name="tramiteFormulario")
+    path('tramiteFormulario/', tramiteFormulario, name="tramiteFormulario"),
+    path('usuarioFormulario/', usuarioFormulario, name="usuarioFormulario")
 ]
