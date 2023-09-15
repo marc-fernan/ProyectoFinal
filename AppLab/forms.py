@@ -3,7 +3,7 @@ from django import forms
 class TramiteFormulario(forms.Form):
 
     motivo = forms.CharField()
-    fecha = forms.DateField()
+    fecha = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     estado = forms.CharField()
 
 class AgenteFormulario(forms.Form):
