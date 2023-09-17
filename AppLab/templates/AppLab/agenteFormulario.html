@@ -1,0 +1,13 @@
+{% extends "AppLab/padre.html" %}
+
+    {% load static %}
+
+{% block contenidoQueCambia %}
+    <h4>FORMULARIO AGENTE</h4>
+    <form action="{% url 'agenteFormulario' %}" method="post">{% csrf_token %}
+
+        {{agenteFormulario.as_p}}
+
+        <button type="submit"> Enviar </button>
+    </form>
+{% endblock %}

@@ -3,8 +3,8 @@ from django.http import HttpResponse, HttpRequest
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import DeleteView, UpdateView, CreateView
-from AppLab.models import *
-from AppLab.forms import *
+from .models import *
+from .forms import *
 
 # Vistas!
 
@@ -24,9 +24,8 @@ def padre(req):
     return render(req, "AppLab/padre.html")
 
 def tramiteFormulario(req):
-    print('method', req.method)
-    print('POST', req.POST)
-    if req.method == "POST":
+    
+    if req.method == 'POST':
             tramiteFormulario = TramiteFormulario(req.POST) # Aqui me llega la informacion del html
              
             if tramiteFormulario.is_valid():
@@ -39,18 +38,30 @@ def tramiteFormulario(req):
             return render(req, "AppLab/tramiteFormulario.html", {"tramiteFormulario": tramiteFormulario})
     
 def usuarioFormulario(req):
-    print('method', req.method)
-    print('POST', req.POST)
-    if req.method == "POST":
+    
+    if req.method == 'POST':
             usuarioFormulario = UsuarioFormulario(req.POST) # Aqui me llega la informacion del html
              
             if usuarioFormulario.is_valid():
-                  informacion = tramiteFormulario.cleaned_data
-                  tramite = Usuario(nombre=informacion["nombre"], apellido=informacion["apellido"], email=informacion["email"])
-                  tramite.save()
+                  informacion = usuarioFormulario.cleaned_data
+                  usuario = Usuario(nombre=informacion["nombre"], apellido=informacion["apellido"], email=informacion["email"])
+                  usuario.save()
                   return render(req, "AppLab/inicio.html")
     else:
             usuarioFormulario = UsuarioFormulario()
             return render(req, "AppLab/usuarioFormulario.html", {"usuarioFormulario": usuarioFormulario})
 
+def agenteFormulario(req):
+    
+    if req.method == 'POST':
+            agenteFormulario = AgenteFormulario(req.POST) # Aqui me llega la informacion del html
+             
+            if agenteFormulario.is_valid():
+                  informacion = agenteFormulario.cleaned_data
+                  agente = Agente(nombre=informacion["nombre"], apellido=informacion["apellido"], email=informacion["email"], funciones=informacion["funciones"])
+                  agente.save()
+                  return render(req, "AppLab/inicio.html")
+    else:
+            agenteFormulario = AgenteFormulario()
+            return render(req, "AppLab/agenteFormulario.html", {"agenteFormulario": agenteFormulario})
 

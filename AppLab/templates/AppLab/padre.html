@@ -19,6 +19,9 @@
         <link href="{% static 'AppLab/css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
+        {% block navbar %}
+<!--        aquí va el contenido de cada template           -->
+        {% endblock %}
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
@@ -27,6 +30,7 @@
                 <a class="navbar-brand" href="{% url 'tramites' %}">Trámites</a>
                 <a class="navbar-brand" href="{% url 'tramiteFormulario' %}">Formulario Trámites</a>
                 <a class="navbar-brand" href="{% url 'usuarioFormulario' %}">Formulario Usuarios</a>
+                <a class="navbar-brand" href="{% url 'agenteFormulario' %}">Formulario Agentes</a>
                 <a class="btn btn-primary" href="#signup">Iniciar sesión</a>
             </div>
         </nav>
