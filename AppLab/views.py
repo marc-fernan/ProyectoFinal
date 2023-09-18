@@ -19,7 +19,7 @@ def buscarTramite(req: HttpRequest):
 
     if req.GET["motivo"]:
         motivo = req.GET["motivo"]
-        tramite = Tramite.objects.get(motivo=motivo)
+        tramite = Tramite.objects.filter(motivo__icontains=motivo)
         return render(req, "AppLab/resultadoBusqueda.html", {"tramite": tramite})
 
 def usuarios(req):

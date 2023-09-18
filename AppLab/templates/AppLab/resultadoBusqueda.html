@@ -4,7 +4,18 @@
    
     <p>Resultados Búsqueda Trámite</p>
 
-    {{tramite}}
+    {% if tramite %}
 
+        <ul>
+
+            {% for tramite in tramite %}
+
+                <li>{{tramite}}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    {% endif %}
 
 {% endblock contenidoQueCambia %}
