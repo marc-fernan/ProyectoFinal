@@ -1,14 +1,11 @@
 {% extends "AppLab/padre.html" %}
 
 {% block contenidoQueCambia %}
-    <h4>Lista de Trámites</h4>
+    <h2>Buscar Trámite</h2>
+    <form action="{% url 'buscarTramite' %}" method="get">
 
-        <ul>
+        <p>Motivo: <input type="text" name="motivo"> <p>
 
-            {% for tramite in buscarTramite %}
-                <li>{{ tramite.motivo }} - {{ tramite.fecha }}</li>
-            {% endfor %}
-
-        </ul>
-
-{% endblock contenidoQueCambia %}
+        <button type="submit"> Buscar </button>
+    </form>
+{% endblock %}
