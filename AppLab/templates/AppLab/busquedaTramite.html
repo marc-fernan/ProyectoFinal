@@ -1,0 +1,12 @@
+{% extends "AppLab/padre.html" %}
+
+{% block contenidoQueCambia %}
+    <h2>Buscar Trámite</h2>
+    <form action="{% url 'buscarTramite' %}" method="get">
+
+        <p>Motivo: <input type="text" name="motivo"> <p>
+
+        <button type="submit"> Buscar </button>
+    </form>
+{% endblock %}
+

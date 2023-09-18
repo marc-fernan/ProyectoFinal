@@ -10,6 +10,10 @@ class Usuario(models.Model):
 
     def __str__(self) -> str:
         return f'{self.nombre} {self.apellido}'
+    
+    class Meta():
+
+        ordering = ('nombre',)
 
 class Agente(models.Model):
 
@@ -26,7 +30,6 @@ class Tramite(models.Model):
     motivo = models.CharField(max_length=50)
     fecha = models.DateField()
     estado = models.CharField(max_length=50)
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-
+    
     def __str__(self) -> str:
         return f'Motivo: {self.motivo} - Estado: {self.estado}'

@@ -11,6 +11,17 @@ from .forms import *
 def inicio(req):
     return render(req, "AppLab/inicio.html")
 
+def busquedaTramite(req):
+    lista = Tramite.objects.all()
+    return render(req, "AppLab/busquedaTramite.html", {"busquedaTramite": lista})
+
+def buscarTramite(req: HttpRequest):
+
+    if req.GET["motivo"]:
+        motivo = req.GET["motivo"]
+        tramite = Tramite.objects.get(motivo=motivo)
+        return render(req, "AppLab/resultadoBusqueda.html", {"tramite": tramite})
+
 def usuarios(req):
     return render(req, "AppLab/usuarios.html")
 

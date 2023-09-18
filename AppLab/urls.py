@@ -10,4 +10,6 @@ urlpatterns = [
     path('tramiteFormulario/', tramiteFormulario, name="tramiteFormulario"),
     path('usuarioFormulario/', usuarioFormulario, name="usuarioFormulario"),
     path('agenteFormulario/', agenteFormulario, name="agenteFormulario"),
+    path('busquedaTramite/', busquedaTramite, name="busquedaTramite"),
+    path('buscarTramite/', buscarTramite, name="buscarTramite"),
 ]

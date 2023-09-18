@@ -1,14 +1,12 @@
 {% extends "AppLab/padre.html" %}
 
 {% block contenidoQueCambia %}
-    <h4>Lista de Trámites</h4>
-
+    <h4>Resultados Búsqueda Trámite</h4>
         <ul>
 
-            {% for tramite in buscarTramite %}
+            {% for motivo in tramite %}
                 <li>{{ tramite.motivo }} - {{ tramite.fecha }}</li>
             {% endfor %}
 
         </ul>
-
 {% endblock contenidoQueCambia %}

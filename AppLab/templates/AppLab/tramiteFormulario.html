@@ -1,7 +1,5 @@
 {% extends "AppLab/padre.html" %}
 
-    {% load static %}
-
 {% block contenidoQueCambia %}
     <h4>FORMULARIO TRAMITE</h4>
     <form action="{% url 'tramiteFormulario' %}" method="post">{% csrf_token %}
