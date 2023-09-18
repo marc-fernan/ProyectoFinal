@@ -2,11 +2,11 @@
 
 {% block contenidoQueCambia %}
     <h4>Resultados Búsqueda Trámite</h4>
-        <ul>
+        {% comment %} <ul>
 
             {% for motivo in tramite %}
                 <li>{{ tramite.motivo }} - {{ tramite.fecha }}</li>
             {% endfor %}
 
-        </ul>
+        </ul> {% endcomment %}
 {% endblock contenidoQueCambia %}
